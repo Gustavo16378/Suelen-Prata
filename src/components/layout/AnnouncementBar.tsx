@@ -1,9 +1,14 @@
-const Diamond = () => <span style={{ color: 'var(--silver)', opacity: 0.85 }}>◆</span>
+const Diamond = ({ hideMobile }: { hideMobile?: boolean }) => (
+  <span className={hideMobile ? 'ab-hide-mobile' : undefined} style={{ color: 'var(--silver)', opacity: 0.85 }}>
+    ◆
+  </span>
+)
 
 /** Faixa superior de avisos — fundo ink, texto dourado suave. */
 export default function AnnouncementBar() {
   return (
     <div
+      className="announcement-bar"
       style={{
         background: 'var(--ink)',
         color: 'var(--gold-soft)',
@@ -21,8 +26,8 @@ export default function AnnouncementBar() {
       }}
     >
       <span>Prata 925 legítima</span>
-      <Diamond />
-      <span>Atendimento personalizado</span>
+      <Diamond hideMobile />
+      <span className="ab-hide-mobile">Atendimento personalizado</span>
       <Diamond />
       <span>Entrega para todo o Brasil</span>
     </div>

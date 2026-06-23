@@ -96,6 +96,16 @@ body {
 
   /* stats centralizados */
   .hero-stats { justify-content: center; gap: 18px; margin-top: 40px; }
+
+  /* faixa de avisos compacta: 1 linha, sem virar bloco preto enorme */
+  .announcement-bar { padding: 7px 14px !important; gap: 12px !important; letter-spacing: .1em !important; }
+  .ab-hide-mobile { display: none !important; }
+
+  /* perfumaria: empilha nome+preço numa linha e a descrição embaixo */
+  .perfume-family { flex-wrap: wrap; gap: 4px 12px !important; }
+  .pf-name { flex: 1 1 auto !important; }
+  .pf-price { order: 2; }
+  .pf-note { order: 3; flex: 1 1 100% !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {

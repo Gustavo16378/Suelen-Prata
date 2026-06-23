@@ -58,10 +58,10 @@ export default function Perfumaria() {
             {/* famílias olfativas */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 0, marginBottom: '36px' }}>
               {perfumeFamilies.map((f) => (
-                <div key={f.name} style={{ display: 'flex', alignItems: 'baseline', gap: '18px', padding: '15px 0', borderBottom: '1px solid rgba(255,255,255,.14)' }}>
-                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '23px', color: '#fff', flex: 1 }}>{f.name}</span>
-                  <span style={{ fontFamily: "'Jost', sans-serif", fontWeight: 300, fontSize: '13px', color: 'rgba(255,255,255,.6)', flex: 1.4 }}>{f.note}</span>
-                  <span style={{ fontFamily: "'Jost', sans-serif", fontSize: '13px', color: 'var(--gold-soft)' }}>{f.price}</span>
+                <div key={f.name} className="perfume-family" style={{ display: 'flex', alignItems: 'baseline', gap: '18px', padding: '15px 0', borderBottom: '1px solid rgba(255,255,255,.14)' }}>
+                  <span className="pf-name" style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '23px', color: '#fff', flex: 1 }}>{f.name}</span>
+                  <span className="pf-note" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 300, fontSize: '13px', color: 'rgba(255,255,255,.6)', flex: 1.4 }}>{f.note}</span>
+                  <span className="pf-price" style={{ fontFamily: "'Jost', sans-serif", fontSize: '13px', color: 'var(--gold-soft)' }}>{f.price}</span>
                 </div>
               ))}
             </div>
