@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Paleta — tokens canônicos (default "Off-white clean" do design)
+   Trocar aqui muda o tema inteiro.
+   ============================================================ */
+:root {
+  --bg: #FCFBF8;
+  --surface: #FFFFFF;
+  --surface-2: #F4F2EC;
+  --ink: #26241F;
+  --ink-soft: #726E64;
+  --line: #ECE9E1;
+  --gold: #BBA268;
+  --gold-deep: #8F7846;
+  --gold-soft: #F1ECDD;
+  --silver: #8C9298;
+  --silver-deep: #646A70;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox: esconde a scrollbar (usamos a linha de progresso) */
+}
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* âncoras param abaixo da navbar fixa, não escondidas atrás dela */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Jost', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold-soft);
+  color: var(--ink);
+}
+
+/* ============================================================
+   Interações / animações do design (classes sp-*)
+   Aplicadas via className nos componentes.
+   ============================================================ */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.sp-link { transition: color .25s ease; }
+.sp-link:hover { color: var(--gold-deep); }
+
+.sp-card { transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease; }
+.sp-card:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -32px rgba(60,45,20,.42); }
+.sp-card:hover .sp-ph { transform: scale(1.06); }
+
+.sp-ph { transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+
+.sp-btn { transition: background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease; }
+.sp-btn:hover { transform: translateY(-2px); }
+
+.sp-row { transition: background .3s ease, padding-left .3s ease; }
+.sp-row:hover { background: color-mix(in srgb, var(--gold-soft) 60%, transparent); padding-left: 10px; }
+.sp-row:hover .sp-ar { opacity: 1; transform: translateX(0); }
+.sp-ar { opacity: 0; transform: translateX(-8px); transition: all .3s ease; }
+
+.sp-igw:hover .sp-ig { transform: scale(1.06); }
+.sp-ig { transition: transform .6s ease; }
+
+/* ============================================================
+   Ajustes mobile (< 768px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Hero centralizado no celular */
+  .hero-copy { text-align: center; }
+  .hero-copy p { margin-left: auto !important; margin-right: auto !important; }
+  .hero-eyebrow { justify-content: center; }
+
+  /* botões empilhados full-width (em vez de espremidos lado a lado) */
+  .hero-actions { flex-direction: column; align-items: stretch; }
+
+  /* stats centralizados */
+  .hero-stats { justify-content: center; gap: 18px; margin-top: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, .sp-card, .sp-ph, .sp-btn, .sp-row, .sp-ar, .sp-ig {
+    animation: none !important;
+    transition: none !important;
+  }
+}

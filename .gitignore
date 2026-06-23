@@ -1,0 +1,20 @@
+node_modules
+dist
+dist-ssr
+*.local
+*.tsbuildinfo
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+*.log
+npm-debug.log*
+
+# artefatos de extração do design-fonte
+_design_decoded.html
+_template_raw.json
+
+# arquivos internos — NÃO publicar
+prompt.md
+Suelen Pratas e Perfumaria.html
+*.rdp
+desktop.ini
