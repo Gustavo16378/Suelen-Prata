@@ -1,20 +1,30 @@
-import Button from './Button'
 import type { Perfume } from '../../data/perfumes'
 
 interface PerfumeCardProps extends Perfume {
   /** Índice editorial exibido sobre a imagem (ex.: "Nº 02"). */
   index?: string
+  /** Abre o modal de detalhes da peça. */
+  onSelect: () => void
 }
 
 /**
- * Card de perfumaria — mais editorial que o card de joia: fundo champanhe em
- * gradiente (bonito mesmo sem foto), índice, família olfativa, notas e preço.
+ * Card de perfumaria — clicável: abre o modal de detalhes (sem preço, a pedido
+ * da loja). Fundo champanhe, índice, família olfativa e notas.
  */
-export default function PerfumeCard({ name, type, price, cap, img, href, family, notes, index }: PerfumeCardProps) {
+export default function PerfumeCard({ name, type, cap, img, family, notes, index, onSelect }: PerfumeCardProps) {
   return (
     <div
+      role="button"
+      tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          onSelect()
+        }
+      }}
       className="sp-card"
-      style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+      style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
     >
       <div
         style={{
@@ -82,12 +92,11 @@ export default function PerfumeCard({ name, type, price, cap, img, href, family,
           </div>
         )}
         <div style={{ height: '1px', background: 'var(--line)', margin: '6px 0 2px' }} />
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginTop: 'auto', flexWrap: 'wrap' }}>
-          <span style={{ fontFamily: "'Jost', sans-serif", fontSize: '18px', fontWeight: 500, color: 'var(--ink)' }}>{price}</span>
-          <Button href={href} variant="outline-gold" dot style={{ padding: '10px 16px', fontSize: '11.5px', gap: '7px' }}>
-            Pedir
-          </Button>
-        </div>
+        <span
+          style={{ marginTop: 'auto', display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: "'Jost', sans-serif", fontSize: '11.5px', letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--gold-deep)' }}
+        >
+          Ver detalhes <span aria-hidden="true">→</span>
+        </span>
       </div>
     </div>
   )

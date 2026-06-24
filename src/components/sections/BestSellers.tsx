@@ -1,9 +1,33 @@
+import { useState } from 'react'
 import SectionLabel from '../ui/SectionLabel'
 import ProductCard from '../ui/ProductCard'
-import { bestSellers } from '../../data/products'
+import PieceModal, { type Piece } from '../ui/PieceModal'
+import { bestSellers, type Product } from '../../data/products'
 import { waLink } from '../../data/site'
 
+const JEWELRY_DETAILS = [
+  'Prata 925 legítima e certificada',
+  'Antialérgica / hipoalergênica',
+  'Acompanha embalagem para presente',
+  'Entrega para todo o Brasil',
+]
+
+function toPiece(p: Product): Piece {
+  return {
+    name: p.name,
+    cap: p.cap,
+    img: p.img,
+    category: p.tag,
+    notes: p.notes,
+    stars: p.stars,
+    reviews: p.reviews,
+    details: JEWELRY_DETAILS,
+  }
+}
+
 export default function BestSellers() {
+  const [selected, setSelected] = useState<Product | null>(null)
+
   return (
     <section
       id="desejados"
@@ -34,7 +58,7 @@ export default function BestSellers() {
         <a
           href={waLink('Quero ver os mais vendidos.')}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           className="sp-link"
           style={{ textDecoration: 'none', fontFamily: "'Jost', sans-serif", fontSize: '13px', letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--ink)', borderBottom: '1px solid var(--gold)', paddingBottom: '6px' }}
         >
@@ -44,9 +68,11 @@ export default function BestSellers() {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
         {bestSellers.map((p, i) => (
-          <ProductCard key={p.name} {...p} index={`Nº 0${i + 1}`} />
+          <ProductCard key={p.name} {...p} index={`Nº 0${i + 1}`} onSelect={() => setSelected(p)} />
         ))}
       </div>
+
+      <PieceModal piece={selected ? toPiece(selected) : null} onClose={() => setSelected(null)} />
     </section>
   )
 }

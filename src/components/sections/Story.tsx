@@ -21,7 +21,7 @@ export default function Story() {
           flexWrap: 'wrap',
         }}
       >
-        {/* FOTO: substituir pela foto real do casal Suelen & Wellington */}
+        {/* FOTO: substituir pela foto real do casal Suelen & Wellyngton */}
         <div style={{ flex: '1 1 320px', minWidth: '280px' }}>
           <div
             style={{
@@ -51,7 +51,7 @@ export default function Story() {
             >
               [ FOTO ]
               <br />
-              Suelen &amp; Wellington
+              Suelen &amp; Wellyngton
               <br />
               retrato real do casal
             </span>
@@ -87,7 +87,7 @@ export default function Story() {
             }}
           >
             A Suelen Pratas &amp; Perfumaria nasceu do sonho de um casal —{' '}
-            <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>Suelen e Wellington</strong> — que transformou a
+            <strong style={{ color: 'var(--ink)', fontWeight: 500 }}>Suelen e Wellyngton</strong> — que transformou a
             paixão por joias em um cuidado quase artesanal com cada cliente. Cada peça é escolhida à mão, com olhar
             atento à autenticidade da prata 925 e à elegância que atravessa o tempo.
           </p>
@@ -115,7 +115,7 @@ export default function Story() {
                 color: 'var(--gold-deep)',
               }}
             >
-              Suelen &amp; Wellington
+              Suelen &amp; Wellyngton
             </span>
             <span
               style={{

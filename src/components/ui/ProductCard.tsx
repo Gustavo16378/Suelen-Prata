@@ -1,21 +1,30 @@
-import Button from './Button'
 import type { Product } from '../../data/products'
 
 interface ProductCardProps extends Product {
   /** Índice editorial exibido sobre a imagem (ex.: "Nº 02"). */
   index?: string
+  /** Abre o modal de detalhes da peça. */
+  onSelect: () => void
 }
 
 /**
- * Card de joia — mesmo formato editorial do PerfumeCard (fundo champanhe em
- * gradiente, pílula de categoria, nome serifa, descrição e divisor), com a
- * avaliação em estrelas que é exclusiva das peças.
+ * Card de joia — clicável: abre o modal de detalhes (sem preço, a pedido da
+ * loja). Fundo champanhe em gradiente, pílula de categoria, nome e descrição.
  */
-export default function ProductCard({ name, price, cap, href, img, tag, stars, reviews, notes, index }: ProductCardProps) {
+export default function ProductCard({ name, cap, img, tag, stars, reviews, notes, index, onSelect }: ProductCardProps) {
   return (
     <div
+      role="button"
+      tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          onSelect()
+        }
+      }}
       className="sp-card"
-      style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}
+      style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
     >
       <div
         style={{
@@ -85,12 +94,12 @@ export default function ProductCard({ name, price, cap, href, img, tag, stars, r
           </div>
         )}
         <div style={{ height: '1px', background: 'var(--line)', margin: '6px 0 2px' }} />
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginTop: 'auto', flexWrap: 'wrap' }}>
-          <span style={{ fontFamily: "'Jost', sans-serif", fontSize: '18px', fontWeight: 500, color: 'var(--ink)' }}>{price}</span>
-          <Button href={href} variant="outline-gold" dot style={{ padding: '10px 16px', fontSize: '11.5px', gap: '7px' }}>
-            Pedir
-          </Button>
-        </div>
+        <span
+          className="sp-ar-wrap"
+          style={{ marginTop: 'auto', display: 'inline-flex', alignItems: 'center', gap: '8px', fontFamily: "'Jost', sans-serif", fontSize: '11.5px', letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--gold-deep)' }}
+        >
+          Ver detalhes <span aria-hidden="true">→</span>
+        </span>
       </div>
     </div>
   )

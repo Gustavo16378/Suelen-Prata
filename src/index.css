@@ -35,7 +35,7 @@ html::-webkit-scrollbar {
 
 /* âncoras param abaixo da navbar fixa, não escondidas atrás dela */
 section[id] {
-  scroll-margin-top: 84px;
+  scroll-margin-top: 122px;
 }
 
 body {
@@ -60,6 +60,15 @@ body {
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
+}
+
+@keyframes sp-modal-overlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes sp-modal-panel {
+  from { opacity: 0; transform: translateY(12px) scale(.985); }
+  to { opacity: 1; transform: none; }
 }
 
 .sp-link { transition: color .25s ease; }

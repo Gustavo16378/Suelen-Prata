@@ -73,14 +73,11 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '44px' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontWeight: 500, fontSize: '28px' }}>
-              Suelen
-            </span>
-            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: '8.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B6BBC0', marginTop: '4px' }}>
-              Pratas &amp; Perfumaria
-            </span>
-          </div>
+          <img
+            src="/photos/logo-preta-transparente.png"
+            alt="Suelen Pratas e Perfumaria"
+            style={{ height: '70px', width: 'auto', display: 'block', marginLeft: '-6px' }}
+          />
           <button
             onClick={onClose}
             aria-label="Fechar menu"

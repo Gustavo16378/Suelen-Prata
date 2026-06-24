@@ -1,12 +1,28 @@
+import { useState } from 'react'
 import { Gift } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import PerfumeCard from '../ui/PerfumeCard'
+import PieceModal, { type Piece } from '../ui/PieceModal'
 import Button from '../ui/Button'
-import { perfumes } from '../../data/perfumes'
+import { perfumes, type Perfume } from '../../data/perfumes'
 import { waLink } from '../../data/site'
+
+const PERFUME_DETAILS = ['Curadoria pessoal da Suelen', 'Entrega para todo o Brasil']
+
+function toPiece(p: Perfume): Piece {
+  return {
+    name: p.name,
+    cap: p.cap,
+    img: p.img,
+    category: p.type,
+    notes: p.notes,
+    details: [`Família: ${p.family}`, ...PERFUME_DETAILS],
+  }
+}
 
 export default function PerfumariaVitrine() {
   const [featured, ...rest] = perfumes
+  const [selected, setSelected] = useState<Perfume | null>(null)
 
   return (
     <section
@@ -113,9 +129,8 @@ export default function PerfumariaVitrine() {
             <p style={{ fontFamily: "'Jost', sans-serif", fontWeight: 300, fontSize: 'clamp(14px, 1.7vw, 16.5px)', lineHeight: 1.7, color: 'var(--ink-soft)', margin: 0, maxWidth: '380px' }}>
               {featured.notes}.
             </p>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px', flexWrap: 'wrap', marginTop: '4px' }}>
-              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '34px', color: 'var(--ink)', lineHeight: 1 }}>{featured.price}</span>
-              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: '11px', letterSpacing: '.14em', textTransform: 'uppercase', color: 'var(--silver-deep)' }}>{featured.type}</span>
+            <div style={{ marginTop: '4px' }}>
+              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: '11px', letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--silver-deep)' }}>{featured.type}</span>
             </div>
             <div style={{ marginTop: '6px' }}>
               <Button href={featured.href} variant="gold" dot style={{ padding: '15px 28px', fontSize: '13.5px' }}>
@@ -128,7 +143,7 @@ export default function PerfumariaVitrine() {
         {/* Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {rest.map((p, i) => (
-            <PerfumeCard key={p.name} {...p} index={`Nº 0${i + 2}`} />
+            <PerfumeCard key={p.name} {...p} index={`Nº 0${i + 2}`} onSelect={() => setSelected(p)} />
           ))}
         </div>
 
@@ -186,6 +201,8 @@ export default function PerfumariaVitrine() {
             Montar no WhatsApp →
           </span>
         </a>
+
+        <PieceModal piece={selected ? toPiece(selected) : null} onClose={() => setSelected(null)} />
       </div>
     </section>
   )

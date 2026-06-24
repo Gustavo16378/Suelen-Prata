@@ -47,7 +47,7 @@ export default function Navbar() {
           style={{
             maxWidth: '1320px',
             margin: '0 auto',
-            padding: '16px clamp(20px, 5vw, 72px)',
+            padding: '12px clamp(20px, 5vw, 72px)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -55,13 +55,12 @@ export default function Navbar() {
           }}
         >
           {/* Logo */}
-          <a href="#top" style={{ textDecoration: 'none', color: 'var(--ink)', display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontWeight: 500, fontSize: 'clamp(24px, 3.2vw, 32px)', letterSpacing: '.01em' }}>
-              Suelen
-            </span>
-            <span style={{ fontFamily: "'Jost', sans-serif", fontWeight: 400, fontSize: '9.5px', letterSpacing: '.42em', textTransform: 'uppercase', color: 'var(--silver-deep)', marginTop: '3px' }}>
-              Pratas &amp; Perfumaria
-            </span>
+          <a href="#top" aria-label="Suelen Pratas e Perfumaria — início" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
+            <img
+              src="/photos/logo-clara-transparente.png"
+              alt="Suelen Pratas e Perfumaria"
+              style={{ height: 'clamp(74px, 9vw, 104px)', width: 'auto', display: 'block' }}
+            />
           </a>
 
           {/* Links desktop */}

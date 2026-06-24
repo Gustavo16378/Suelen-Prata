@@ -11,7 +11,7 @@ export const perfumeFamilies: PerfumeFamily[] = [
   { name: 'Florais', note: 'Delicado, feminino, para o dia', price: 'a partir de R$ 159' },
   { name: 'Amadeirados', note: 'Quente e marcante, para a noite', price: 'a partir de R$ 189' },
   { name: 'Cítricos', note: 'Leve e fresco, sempre versátil', price: 'a partir de R$ 149' },
-  { name: 'Gourmand', note: 'Doce e envolvente, assinatura', price: 'a partir de R$ 199' },
+  { name: 'Gourmand', note: 'Doce e marcante, assinatura', price: 'a partir de R$ 199' },
 ]
 
 export interface Perfume {

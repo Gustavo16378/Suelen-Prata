@@ -44,13 +44,12 @@ export default function Footer() {
       >
         {/* Marca */}
         <div style={{ maxWidth: '330px', minWidth: '200px' }}>
-          <div style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontWeight: 500, fontSize: '34px', lineHeight: 1 }}>
-            Suelen
-          </div>
-          <div style={{ fontFamily: "'Jost', sans-serif", fontSize: '10px', letterSpacing: '.42em', textTransform: 'uppercase', color: '#B6BBC0', marginTop: '6px' }}>
-            Pratas &amp; Perfumaria
-          </div>
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '20px', color: 'color-mix(in srgb, var(--bg) 75%, transparent)', margin: '22px 0 0', lineHeight: 1.4 }}>
+          <img
+            src="/photos/logo-preta-transparente.png"
+            alt="Suelen Pratas e Perfumaria"
+            style={{ height: '96px', width: 'auto', display: 'block', marginLeft: '-6px' }}
+          />
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '20px', color: 'color-mix(in srgb, var(--bg) 75%, transparent)', margin: '18px 0 0', lineHeight: 1.4 }}>
             Autenticidade e elegância atemporal.
           </p>
         </div>
@@ -104,7 +103,7 @@ export default function Footer() {
       >
         <span style={bottomSpan}>© 2026 Suelen Pratas &amp; Perfumaria · Prata 925 legítima</span>
         <div style={{ display: 'flex', gap: '18px', flexWrap: 'wrap', alignItems: 'center' }}>
-          <span style={bottomSpan}>Feito com cuidado por Suelen &amp; Wellington</span>
+          <span style={bottomSpan}>Feito com cuidado por Suelen &amp; Wellyngton</span>
           <a
             href="https://gustavodev.dev/"
             target="_blank"
