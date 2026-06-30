@@ -22,19 +22,20 @@ export function img(base: string, w?: number, h?: number): string {
   return `${IMG_DIR}/${base}`
 }
 
-/** Fotos do casal que passam no carrossel/slideshow do hero (capa). */
-export const heroSlides: string[] = [
+/** Fotos do casal que passam no slideshow da seção "Nossa História". */
+export const coupleSlides: string[] = [
   img('casal-em-festa-1.webp'),
   img('casal-sorrindo-carro-1.webp'),
   img('casal-sorrindo-oculos-escuros-1.webp'),
 ]
 
 /**
- * Cenas editoriais (banners e fundos das seções) — FOTOS REAIS (sem stock).
- * O hero usa o slideshow `heroSlides` acima (fotos do casal).
+ * Cenas editoriais (hero, banners e fundos das seções) — FOTOS REAIS (sem stock).
+ * As fotos do casal ficam na seção "Nossa História" (slideshow `coupleSlides`).
  * Componentes têm guarda: cena vazia ('') mostra o box "[ FOTO ]".
  */
-export const scenes: Record<'statement' | 'bannerEveryday' | 'bannerGift' | 'perfumaria', string> = {
+export const scenes: Record<'hero' | 'statement' | 'bannerEveryday' | 'bannerGift' | 'perfumaria', string> = {
+  hero: img('colar-cordao-rosa-coracao-1.webp'), // colar de coração rosé · capa
   statement: img('correntes-prata-expostas-1.webp'), // correntes sobre fundo escuro
   bannerEveryday: img('pulseiras-prata-empilhadas-1.webp'), // joias do dia a dia
   bannerGift: img('conjunto-joia-azul-presente-1.webp'), // peça para presente

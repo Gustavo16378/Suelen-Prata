@@ -1,4 +1,6 @@
 import SectionLabel from '../ui/SectionLabel'
+import Slideshow from '../ui/Slideshow'
+import { coupleSlides } from '../../data/images'
 
 export default function Story() {
   return (
@@ -55,6 +57,7 @@ export default function Story() {
               <br />
               retrato real do casal
             </span>
+            <Slideshow images={coupleSlides} alt="Suelen e Wellyngton" />
           </div>
         </div>
 
