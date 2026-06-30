@@ -41,6 +41,7 @@ const raw: Array<Omit<Perfume, 'img' | 'href'> & { file: string }> = [
   { file: 'perfume-arabe-dourado-1.webp', name: 'Tharwah Gold', type: 'Lattafa Pride · Eau de Parfum', cap: 'perfume árabe', family: 'Âmbar amadeirado', group: 'Árabes', notes: 'Dourado e marcante, âmbar com fundo doce' },
   { file: 'perfume-arabe-dourado-2.webp', name: 'Fakhar Rose', type: 'Lattafa · Eau de Parfum', cap: 'perfume árabe', family: 'Floral frutado', group: 'Árabes', notes: 'O "perfume da sereia": floral frutado elegante' },
   { file: 'perfume-dalal-lattafa-feminino-1.webp', name: 'Dalal', type: 'Lattafa · Eau de Parfum feminino', cap: 'perfume árabe', family: 'Floral oriental', group: 'Árabes', notes: 'Feminino sofisticado, floral com fundo cremoso' },
+  { file: 'perfume-dalal-lattafa-dourado-1.webp', name: 'Dalal', type: 'Lattafa · Eau de Parfum 100ml', cap: 'perfume árabe', family: 'Floral oriental', group: 'Árabes', notes: 'Feminino sofisticado, floral com fundo cremoso' },
   { file: 'perfume-lattafa-asad-bourbon-1.webp', name: 'Asad Bourbon', type: 'Lattafa · Eau de Parfum 100ml', cap: 'perfume árabe', family: 'Amadeirado gourmand', group: 'Árabes', notes: 'Masculino intenso: bourbon, baunilha e madeiras' },
   { file: 'frasco-perfume-dourado-ornamentado-1.webp', name: 'Afeef', type: 'Lattafa · Eau de Parfum', cap: 'perfume árabe', family: 'Floral frutado', group: 'Árabes', notes: 'O "perfume do pavão": pêssego suculento, tuberosa e âmbar' },
   { file: 'perfume-arabe-rosa-1.webp', name: 'Sabah Al Ward', type: 'Al Wataniah · Eau de Parfum', cap: 'perfume árabe', family: 'Floral adocicado', group: 'Árabes', notes: 'Rosas e doçura árabe, feminino marcante' },
@@ -54,6 +55,7 @@ const raw: Array<Omit<Perfume, 'img' | 'href'> & { file: string }> = [
   // (a foto da caixa no fundo branco foi removida — mantida só a lifestyle)
   { file: 'perfume-club-de-nuit-feminino-1.webp', name: 'Club de Nuit Woman', type: 'Armaf · Eau de Parfum 105ml', cap: 'perfume', family: 'Chipre frutado', group: 'Club de Nuit · Armaf', notes: 'Feminino elegante, frutado e amadeirado' },
   { file: 'perfume-club-de-nuit-masculino-1.webp', name: 'Club de Nuit Intense Man', type: 'Armaf · Eau de Toilette 105ml', cap: 'perfume', family: 'Amadeirado frutado', group: 'Club de Nuit · Armaf', notes: 'Masculino marcante: abacaxi, bétula e baunilha' },
+  { file: 'perfumes-coloridos-enfileirados-1.webp', name: 'Club de Nuit · Coleção', type: 'Armaf · Coleção', cap: 'coleção Armaf', family: 'Amadeirados', group: 'Club de Nuit · Armaf', notes: 'Vários: Intense, Impériale e edições Armaf' },
 
   // ── Brand Collection (contratipos · 25ml) ────────────────────────
   { file: 'perfume-inspiracao-good-girl-1.webp', name: 'Brand Collection Nº 126', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Gourmand floral', group: 'Brand Collection', notes: 'Inspiração Good Girl (Carolina Herrera)' },
@@ -63,6 +65,7 @@ const raw: Array<Omit<Perfume, 'img' | 'href'> & { file: string }> = [
   { file: 'perfume-brand-collection-1.webp', name: 'Brand Collection Nº 303', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Gourmand floral', group: 'Brand Collection', notes: 'Inspiração Devotion (Dolce & Gabbana)' },
   { file: 'perfume-brand-collection-rosa-1.webp', name: 'Brand Collection Nº 017', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Floral frutado', group: 'Brand Collection', notes: 'Inspiração Nina (Nina Ricci)' },
   { file: 'perfume-roxo-feminino-1.webp', name: 'Dream Brand Collection Nº 043 · Ange A', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Âmbar amadeirado', group: 'Brand Collection', notes: 'Inspiração Alien (Thierry Mugler)' },
+  { file: 'perfume-vermelho-brand-collection-1.webp', name: 'Brand Collection Nº 027', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Oriental baunilha', group: 'Brand Collection', notes: 'Inspiração Hypnotic Poison (Dior)' },
 
   // ── Kits & Combos ────────────────────────────────────────────────
   { file: 'combo-perfume-hidratante-1.webp', name: 'Combo Sabah Al Ward', type: 'Combo · perfume + creme corporal', cap: 'combo perfumaria', family: 'Kit', group: 'Kits & Combos', notes: 'Perfume Sabah Al Ward + creme corporal, o combo perfeito' },

@@ -41,6 +41,8 @@ const raw: Array<Omit<Product, 'img' | 'href'> & { file: string }> = [
   { file: 'conjunto-prata-esmeralda-coracao-1.webp', name: 'Conjunto Coração Esmeralda', tag: 'Conjunto', cap: 'conjunto de prata', stars: '★★★★★', reviews: '(108)', notes: 'Verde esmeralda em coração, conjunto sofisticado' },
   { file: 'conjunto-prata-trevo-azul-1.webp', name: 'Conjunto Trevo Azul', tag: 'Conjunto', cap: 'conjunto de prata', stars: '★★★★★', reviews: '(85)', notes: 'Trevo da sorte com cristal azul, colar e brincos' },
   { file: 'conjuntos-coracao-prata-coloridos-1.webp', name: 'Conjuntos Corações Coloridos', tag: 'Conjunto', cap: 'conjuntos sortidos', stars: '★★★★☆', reviews: '(67)', notes: 'Variedade de conjuntos coração em cristais coloridos' },
+  { file: 'conjunto-joias-coracao-vermelho-1.webp', name: 'Conjunto Coração Rubi', tag: 'Conjunto', cap: 'conjunto de prata', stars: '★★★★★', reviews: '(116)', notes: 'Colar e brincos com coração em cristal vermelho' },
+  { file: 'conjunto-joias-prata-coracoes-1.webp', name: 'Conjunto Trio de Corações', tag: 'Conjunto', cap: 'conjunto de prata', stars: '★★★★★', reviews: '(98)', notes: 'Colar, pulseira e brincos com corações em prata' },
 
   // ── Pulseiras & pingentes ────────────────────────────────────────
   { file: 'pulseira-pandora-prata-coracao-1.webp', name: 'Pulseira de Charms', tag: 'Pulseira', cap: 'pulseira de prata', stars: '★★★★★', reviews: '(176)', notes: 'Estilo charm com pingente de coração' },

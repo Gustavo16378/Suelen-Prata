@@ -22,26 +22,19 @@ export function img(base: string, w?: number, h?: number): string {
   return `${IMG_DIR}/${base}`
 }
 
-// Fotos de stock (Unsplash) usadas SÓ como placeholder nas cenas — nos pontos
-// onde ainda não temos foto real (modelo na capa, anel de close, etc.).
-// TODO: revisar com a Suelen — substituir pelas fotos reais de campanha.
-const STOCK = {
-  modelChain: 'https://images.unsplash.com/photo-1680068098871-f196518eb6c4', // modelo · colar de prata
-  ring: 'https://images.unsplash.com/photo-1656010280156-fa8c1793c235', // anel de prata (close)
-  bracelet: 'https://images.unsplash.com/photo-1609361608045-5331e9e6fdcf', // pulseira (editorial)
-}
-
 /**
- * Cenas editoriais (hero, banners e fundos das seções).
- * Hero/statement/banners ainda usam o stock acima como PLACEHOLDER (faltam as
- * fotos de modelo). A perfumaria já usa uma FOTO REAL da loja.
- * Para ativar uma cena real, troque o caminho — ex.: img('arquivo.webp').
- * Os componentes têm guarda: se uma cena ficar vazia (''), mostram o box "[ FOTO ]".
+ * Cenas editoriais (hero, banners e fundos das seções) — agora com FOTOS REAIS
+ * (sem mais stock do Unsplash).
+ * - hero e banners: fotos do casal (Suelen & Wellyngton);
+ * - statement: correntes sobre fundo escuro;
+ * - perfumaria: Afeef (frasco dourado).
+ * Para trocar uma cena, basta mudar o arquivo aqui. Os componentes têm guarda:
+ * se uma cena ficar vazia (''), mostram o box "[ FOTO ]".
  */
 export const scenes: Record<'hero' | 'statement' | 'bannerEveryday' | 'bannerGift' | 'perfumaria', string> = {
-  hero: img(STOCK.modelChain, 760, 950),
-  statement: img(STOCK.ring, 1600, 900),
-  bannerEveryday: img(STOCK.bracelet, 800, 600),
-  bannerGift: img(STOCK.modelChain, 800, 600),
-  perfumaria: img('frasco-perfume-dourado-ornamentado-1.webp'), // foto real · frasco dourado
+  hero: img('casal-em-festa-1.webp'), // casal · capa
+  statement: img('correntes-prata-expostas-1.webp'), // correntes sobre fundo escuro
+  bannerEveryday: img('casal-sorrindo-carro-1.webp'), // casal · dia a dia
+  bannerGift: img('casal-sorrindo-oculos-escuros-1.webp'), // casal · celebrando
+  perfumaria: img('frasco-perfume-dourado-ornamentado-1.webp'), // Afeef · frasco dourado
 }
