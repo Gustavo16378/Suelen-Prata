@@ -1,0 +1,17 @@
+{
+  "name": "Suelen Pratas e Perfumaria",
+  "short_name": "Suelen",
+  "description": "Joias em prata 925 legítima e perfumaria — entrega para todo o Brasil.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FCFBF8",
+  "theme_color": "#26241F",
+  "icons": [
+    {
+      "src": "/photos/favicon-preta-180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

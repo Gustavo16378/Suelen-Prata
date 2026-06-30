@@ -91,7 +91,8 @@ export default function Hero() {
           {scenes.hero && (
             <img
               src={scenes.hero}
-              alt="Colar de prata 925"
+              alt="Colar de coração em prata 925 — Suelen Pratas e Perfumaria"
+              fetchPriority="high"
               className="sp-ph"
               onError={(e) => {
                 e.currentTarget.style.display = 'none'

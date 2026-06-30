@@ -31,7 +31,7 @@ export default function Perfumaria() {
               {scenes.perfumaria && (
                 <img
                   src={scenes.perfumaria}
-                  alt="Perfumaria"
+                  alt="Perfume árabe Afeef (Lattafa) — perfumaria Suelen"
                   loading="lazy"
                   className="sp-ph"
                   onError={(e) => {

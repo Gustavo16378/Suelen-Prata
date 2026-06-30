@@ -1,9 +1,11 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { ViteReactSSG } from 'vite-react-ssg/single-page'
 import App from './App'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+// SSG single-page: o vite-react-ssg pré-renderiza a App em HTML estático no
+// build (e hidrata no cliente). Visualmente idêntico ao createRoot anterior.
+export const createRoot = ViteReactSSG(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

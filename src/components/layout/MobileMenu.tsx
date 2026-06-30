@@ -1,4 +1,4 @@
-import { type MouseEvent } from 'react'
+import { useEffect, useState, type MouseEvent } from 'react'
 import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import { navLinks } from '../../data/nav'
@@ -20,6 +20,11 @@ interface MobileMenuProps {
  */
 export default function MobileMenu({ open, onClose }: MobileMenuProps) {
   useScrollLock(open)
+
+  // Portal só no cliente (no build SSG não existe `document`). Renderiza null
+  // no servidor e no 1º render do cliente → sem mismatch de hidratação.
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
 
   // Fecha o menu e, só depois do scroll-lock destravar, rola suave até a seção.
   // (Navegar pelo href nativo brigaria com o body travado e não funcionaria.)
@@ -157,5 +162,6 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
     </>
   )
 
+  if (!mounted) return null
   return createPortal(menu, document.body)
 }

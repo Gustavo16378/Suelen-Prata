@@ -7,7 +7,7 @@ import { scenes } from '../../data/images'
 const banners = [
   {
     img: scenes.bannerEveryday,
-    alt: 'Para todo dia',
+    alt: 'Pulseiras de prata 925 para o dia a dia',
     caption: '[ FOTO ] joias do dia a dia',
     label: 'Para todo dia',
     href: waLink('Quero ver as peças do dia a dia.'),
@@ -19,7 +19,7 @@ const banners = [
   },
   {
     img: scenes.bannerGift,
-    alt: 'Para presentear',
+    alt: 'Conjunto de prata 925 para presentear',
     caption: '[ FOTO ] peça statement · pescoço',
     label: 'Para presentear',
     href: waLink('Quero uma peça para presente.'),

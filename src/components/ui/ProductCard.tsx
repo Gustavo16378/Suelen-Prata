@@ -48,7 +48,7 @@ export default function ProductCard({ name, cap, img, tag, stars, reviews, notes
         {img && (
           <img
             src={img}
-            alt={name}
+            alt={`${name} — ${cap}`}
             loading="lazy"
             className="sp-ph"
             onError={(e) => {

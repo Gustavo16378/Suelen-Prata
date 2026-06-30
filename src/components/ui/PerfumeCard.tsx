@@ -48,7 +48,7 @@ export default function PerfumeCard({ name, type, cap, img, family, notes, index
         {img && (
           <img
             src={img}
-            alt={name}
+            alt={`${name} — ${cap}`}
             loading="lazy"
             className="sp-ph"
             onError={(e) => {

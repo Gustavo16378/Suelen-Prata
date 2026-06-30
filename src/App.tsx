@@ -1,3 +1,8 @@
+import Seo from './components/Seo'
+import { homeJsonLd } from './data/seo'
+import { joias } from './data/products'
+import { perfumes } from './data/perfumes'
+
 import AnnouncementBar from './components/layout/AnnouncementBar'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
@@ -19,6 +24,7 @@ import FinalCTA from './components/sections/FinalCTA'
 export default function App() {
   return (
     <>
+      <Seo jsonLd={homeJsonLd(joias, perfumes)} />
       <AnnouncementBar />
       <Navbar />
       <main>

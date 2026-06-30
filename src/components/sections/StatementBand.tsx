@@ -18,7 +18,7 @@ export default function StatementBand() {
       {scenes.statement && (
         <img
           src={scenes.statement}
-          alt="Joias em prata"
+          alt="Correntes de prata 925 legítima"
           loading="lazy"
           onError={(e) => {
             e.currentTarget.style.display = 'none'
