@@ -1,5 +1,6 @@
+import { Instagram } from 'lucide-react'
 import Button from '../ui/Button'
-import { waLink } from '../../data/site'
+import { waLink, site } from '../../data/site'
 
 export default function FinalCTA() {
   return (
@@ -18,14 +19,25 @@ export default function FinalCTA() {
         Atendimento personalizado, do primeiro contato à entrega. Chame no WhatsApp e descubra a peça perfeita para você.
       </p>
 
-      <Button
-        href={waLink('Olá! Vim pelo site e quero um atendimento.')}
-        variant="gold"
-        dot
-        style={{ padding: '19px 40px', fontSize: '15px', boxShadow: '0 20px 44px -20px var(--gold)' }}
-      >
-        Falar no WhatsApp
-      </Button>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+        <Button
+          href={waLink('Olá! Vim pelo site e quero um atendimento.')}
+          variant="gold"
+          dot
+          style={{ padding: '19px 40px', fontSize: '15px', boxShadow: '0 20px 44px -20px var(--gold)' }}
+        >
+          Falar no WhatsApp
+        </Button>
+        <Button
+          href={site.instagramUrl}
+          variant="outline-gold"
+          ariaLabel="Seguir no Instagram"
+          style={{ padding: '19px 36px', fontSize: '15px' }}
+        >
+          <Instagram size={18} strokeWidth={1.6} />
+          Seguir no Instagram
+        </Button>
+      </div>
     </section>
   )
 }

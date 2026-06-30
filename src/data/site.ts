@@ -6,9 +6,8 @@ export const site = {
   brandFull: 'Suelen Pratas & Perfumaria',
   slogan: 'Autenticidade e elegância atemporal',
 
-  // ⚠️ PLACEHOLDER do design — TROCAR pelo número real.
-  // Provável real: '5563981103967' (telefone (63) 98110-3967). Confirmar com a Suelen.
-  whatsapp: '5599999999999',
+  // Número de atendimento (WhatsApp) — telefone (63) 98110-3967.
+  whatsapp: '5563981103967',
 
   phone: '(63) 98110-3967',
   instagramHandle: '@suelenprataseperfumaria_',

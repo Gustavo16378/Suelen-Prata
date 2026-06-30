@@ -54,19 +54,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Categorias */}
-        <div>
-          <div style={heading}>Categorias</div>
-          <div style={linkCol}>
-            <a href="#desejados" className="sp-link" style={linkStyle}>Colares</a>
-            <a href="#desejados" className="sp-link" style={linkStyle}>Anéis &amp; Brincos</a>
-            <a href="#desejados" className="sp-link" style={linkStyle}>Pulseiras &amp; Berloques</a>
-            <a href="#desejados" className="sp-link" style={linkStyle}>Pandora</a>
-            <a href="#desejados" className="sp-link" style={linkStyle}>Masculino &amp; Relógios</a>
-            <a href="#perfumaria" className="sp-link" style={linkStyle}>Perfumaria</a>
-          </div>
-        </div>
-
         {/* Contato */}
         <div>
           <div style={heading}>Contato</div>
