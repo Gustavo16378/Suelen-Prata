@@ -26,6 +26,10 @@ export const faqs: FaqItem[] = [
     a: 'Tem sim. Se o aro do anel ou o tamanho não ficar bom, a gente combina a troca pelo WhatsApp, sem stress. Por isso vale conferir as medidas antes de pedir.',
   },
   {
+    q: 'Vou ganhar algum brinde?',
+    a: 'Pode rolar! De vez em quando a Suelen manda um mimo especial junto do pedido — como uma necessaire personalizada da marca. É uma surpresa, a critério da loja (não é em toda compra), mas o capricho no embrulho você tem sempre. 💕',
+  },
+  {
     q: 'Como funcionam pagamento e entrega?',
     a: 'Você fecha tudo pelo WhatsApp: combinamos a forma de pagamento (Pix ou cartão) e enviamos para todo o Brasil com código de rastreio. O frete e o prazo calculamos para a sua cidade na hora.',
   },
