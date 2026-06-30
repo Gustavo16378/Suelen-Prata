@@ -28,16 +28,18 @@ export default function Perfumaria() {
               <span style={{ fontFamily: "'Jost', sans-serif", fontSize: '11px', letterSpacing: '.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,.4)', textAlign: 'center' }}>
                 [ FOTO ] perfumaria · frasco
               </span>
-              <img
-                src={scenes.perfumaria}
-                alt="Perfumaria"
-                loading="lazy"
-                className="sp-ph"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none'
-                }}
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-              />
+              {scenes.perfumaria && (
+                <img
+                  src={scenes.perfumaria}
+                  alt="Perfumaria"
+                  loading="lazy"
+                  className="sp-ph"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none'
+                  }}
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              )}
             </div>
           </div>
 

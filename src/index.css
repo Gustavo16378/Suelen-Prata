@@ -92,6 +92,60 @@ body {
 .sp-ig { transition: transform .6s ease; }
 
 /* ============================================================
+   Carrossel horizontal (vitrines de joias e perfumaria)
+   ============================================================ */
+.sp-carousel {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(12px, 1.6vw, 24px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 6px 2px 16px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gold) transparent;
+}
+.sp-carousel::-webkit-scrollbar { height: 6px; }
+.sp-carousel::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 100px; }
+.sp-carousel::-webkit-scrollbar-track { background: transparent; }
+
+/* cada slide: largura fixa + alinhamento de snap */
+.sp-slide {
+  flex: 0 0 auto;
+  width: clamp(220px, 74vw, 286px);
+  scroll-snap-align: start;
+}
+
+/* setas (desktop) */
+.sp-carousel-nav {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 14px 30px -16px rgba(60, 45, 20, .55);
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+  z-index: 3;
+}
+.sp-carousel-nav:hover { background: var(--gold); color: #fff; }
+.sp-carousel-prev { left: -10px; }
+.sp-carousel-next { right: -10px; }
+
+/* no mobile/tablet usa o swipe nativo — esconde as setas */
+@media (max-width: 900px) {
+  .sp-carousel-nav { display: none; }
+}
+
+/* ============================================================
    Ajustes mobile (< 768px)
    ============================================================ */
 @media (max-width: 767px) {
@@ -115,6 +169,12 @@ body {
   .pf-name { flex: 1 1 auto !important; }
   .pf-price { order: 2; }
   .pf-note { order: 3; flex: 1 1 100% !important; }
+
+  /* carrossel: dois cards por tela (com uma fresta do próximo, indicando swipe) */
+  .sp-slide { width: 45%; }
+  /* cards mais compactos pra não ficarem apertados no formato 2-up */
+  .sp-card-body { padding: 14px !important; gap: 6px !important; }
+  .sp-card-title { font-size: 20px !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {

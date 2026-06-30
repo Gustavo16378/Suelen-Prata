@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { Gift } from 'lucide-react'
 import SectionLabel from '../ui/SectionLabel'
 import PerfumeCard from '../ui/PerfumeCard'
+import CategoryRow from '../ui/CategoryRow'
 import PieceModal, { type Piece } from '../ui/PieceModal'
 import Button from '../ui/Button'
-import { perfumes, type Perfume } from '../../data/perfumes'
+import { perfumes, perfumeGroups, type Perfume } from '../../data/perfumes'
 import { waLink } from '../../data/site'
 
 const PERFUME_DETAILS = ['Curadoria pessoal da Suelen', 'Entrega para todo o Brasil']
@@ -21,7 +22,7 @@ function toPiece(p: Perfume): Piece {
 }
 
 export default function PerfumariaVitrine() {
-  const [featured, ...rest] = perfumes
+  const featured = perfumes[0]
   const [selected, setSelected] = useState<Perfume | null>(null)
 
   return (
@@ -140,12 +141,20 @@ export default function PerfumariaVitrine() {
           </div>
         </article>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-          {rest.map((p, i) => (
-            <PerfumeCard key={p.name} {...p} index={`Nº 0${i + 2}`} onSelect={() => setSelected(p)} />
-          ))}
-        </div>
+        {/* Fileiras por categoria (o destaque acima sai da sua fileira) */}
+        {perfumeGroups.map((group) => {
+          const items = group.items.filter((p) => p.name !== featured.name)
+          if (items.length === 0) return null
+          return (
+            <CategoryRow key={group.label} label={group.label} count={items.length}>
+              {items.map((p, i) => (
+                <div key={p.name} className="sp-slide">
+                  <PerfumeCard {...p} index={`Nº ${String(i + 1).padStart(2, '0')}`} onSelect={() => setSelected(p)} />
+                </div>
+              ))}
+            </CategoryRow>
+          )
+        })}
 
         {/* Banner "Monte seu kit" */}
         <a

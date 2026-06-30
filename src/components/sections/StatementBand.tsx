@@ -14,16 +14,18 @@ export default function StatementBand() {
         background: 'var(--ink)',
       }}
     >
-      {/* Fundo decorativo: anel de prata sobre o ink */}
-      <img
-        src={scenes.statement}
-        alt="Anel de prata"
-        loading="lazy"
-        onError={(e) => {
-          e.currentTarget.style.display = 'none'
-        }}
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.42 }}
-      />
+      {/* Fundo decorativo: foto de cena sobre o ink (placeholder enquanto vazio) */}
+      {scenes.statement && (
+        <img
+          src={scenes.statement}
+          alt="Joias em prata"
+          loading="lazy"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none'
+          }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.42 }}
+        />
+      )}
 
       {/* Véu escuro p/ legibilidade: forte na esquerda (texto), suave na direita */}
       <span

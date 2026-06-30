@@ -73,16 +73,18 @@ export default function DoubleBanner() {
           >
             {b.caption}
           </span>
-          <img
-            src={b.img}
-            alt={b.alt}
-            loading="lazy"
-            className="sp-ph"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none'
-            }}
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-          />
+          {b.img && (
+            <img
+              src={b.img}
+              alt={b.alt}
+              loading="lazy"
+              className="sp-ph"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none'
+              }}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          )}
           <div
             style={{
               position: 'relative',

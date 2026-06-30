@@ -24,7 +24,7 @@ export default function PerfumeCard({ name, type, cap, img, family, notes, index
         }
       }}
       className="sp-card"
-      style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
+      style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', cursor: 'pointer', height: '100%' }}
     >
       <div
         style={{
@@ -79,11 +79,11 @@ export default function PerfumeCard({ name, type, cap, img, family, notes, index
         )}
       </div>
 
-      <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
+      <div className="sp-card-body" style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
         <div style={{ fontFamily: "'Jost', sans-serif", fontSize: '10.5px', letterSpacing: '.16em', textTransform: 'uppercase', color: 'var(--gold-deep)' }}>
           {type}
         </div>
-        <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', lineHeight: 1.12, color: 'var(--ink)' }}>
+        <div className="sp-card-title" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', lineHeight: 1.12, color: 'var(--ink)' }}>
           {name}
         </div>
         {notes && (

@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import SectionLabel from '../ui/SectionLabel'
 import ProductCard from '../ui/ProductCard'
+import CategoryRow from '../ui/CategoryRow'
 import PieceModal, { type Piece } from '../ui/PieceModal'
-import { bestSellers, type Product } from '../../data/products'
+import { joiasGroups, type Product } from '../../data/products'
 import { waLink } from '../../data/site'
 
 const JEWELRY_DETAILS = [
@@ -66,11 +67,15 @@ export default function BestSellers() {
         </a>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-        {bestSellers.map((p, i) => (
-          <ProductCard key={p.name} {...p} index={`Nº 0${i + 1}`} onSelect={() => setSelected(p)} />
-        ))}
-      </div>
+      {joiasGroups.map((group) => (
+        <CategoryRow key={group.label} label={group.label} count={group.items.length}>
+          {group.items.map((p, i) => (
+            <div key={p.name} className="sp-slide">
+              <ProductCard {...p} index={`Nº ${String(i + 1).padStart(2, '0')}`} onSelect={() => setSelected(p)} />
+            </div>
+          ))}
+        </CategoryRow>
+      ))}
 
       <PieceModal piece={selected ? toPiece(selected) : null} onClose={() => setSelected(null)} />
     </section>

@@ -24,7 +24,7 @@ export default function ProductCard({ name, cap, img, tag, stars, reviews, notes
         }
       }}
       className="sp-card"
-      style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
+      style={{ background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column', cursor: 'pointer', height: '100%' }}
     >
       <div
         style={{
@@ -79,13 +79,13 @@ export default function ProductCard({ name, cap, img, tag, stars, reviews, notes
         )}
       </div>
 
-      <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
+      <div className="sp-card-body" style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
         {stars && (
           <div style={{ color: 'var(--gold)', fontSize: '13px', letterSpacing: '.1em' }}>
             {stars} <span style={{ color: 'var(--ink-soft)', fontSize: '11px' }}>{reviews}</span>
           </div>
         )}
-        <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', lineHeight: 1.12, color: 'var(--ink)' }}>
+        <div className="sp-card-title" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '24px', lineHeight: 1.12, color: 'var(--ink)' }}>
           {name}
         </div>
         {notes && (
