@@ -30,51 +30,51 @@ export interface Perfume {
   group: string
 }
 
-// ⚠️ TODO: revisar com a Suelen — nomes, tipos, famílias e descrições foram
-// gerados por IA a partir do NOME DO ARQUIVO das fotos. Confirmar marcas,
-// volumes (ml) e famílias olfativas com a loja.
+// Nomes/marcas IDENTIFICADOS lendo o rótulo de cada foto (Lattafa, Al Wataniah,
+// Armaf, Brand Collection, etc.).
+// ⚠️ TODO: revisar com a Suelen — confirmar volumes (ml), preços e as
+// "inspirações" dos contratipos. As notas olfativas são uma referência.
 const raw: Array<Omit<Perfume, 'img' | 'href'> & { file: string }> = [
-  // ── Destaque (1º = card grande "Destaque da curadoria") ──────────
-  { file: 'perfume-yara-rosa-dourado-1.webp', name: 'Lattafa Yara', type: 'Eau de Parfum · árabe', cap: 'perfume árabe', family: 'Gourmand floral', group: 'Árabes', notes: 'Cremoso, com heliotrópio, baunilha e notas frutadas' },
+  // ── Árabes (Lattafa · Al Wataniah · Maison Alhambra) ─────────────
+  // Destaque (1º = card grande "Destaque da curadoria")
+  { file: 'perfume-yara-rosa-dourado-1.webp', name: 'Yara Candy', type: 'Lattafa · Eau de Parfum 100ml', cap: 'perfume árabe', family: 'Gourmand frutado', group: 'Árabes', notes: 'Versão pink da Yara: frutas vermelhas, baunilha e toque tropical' },
+  { file: 'perfume-arabe-dourado-1.webp', name: 'Tharwah Gold', type: 'Lattafa Pride · Eau de Parfum', cap: 'perfume árabe', family: 'Âmbar amadeirado', group: 'Árabes', notes: 'Dourado e marcante, âmbar com fundo doce' },
+  { file: 'perfume-arabe-dourado-2.webp', name: 'Fakhar Rose', type: 'Lattafa · Eau de Parfum', cap: 'perfume árabe', family: 'Floral frutado', group: 'Árabes', notes: 'O "perfume da sereia": floral frutado elegante' },
+  { file: 'perfume-dalal-lattafa-feminino-1.webp', name: 'Dalal', type: 'Lattafa · Eau de Parfum feminino', cap: 'perfume árabe', family: 'Floral oriental', group: 'Árabes', notes: 'Feminino sofisticado, floral com fundo cremoso' },
+  { file: 'perfume-lattafa-asad-bourbon-1.webp', name: 'Asad Bourbon', type: 'Lattafa · Eau de Parfum 100ml', cap: 'perfume árabe', family: 'Amadeirado gourmand', group: 'Árabes', notes: 'Masculino intenso: bourbon, baunilha e madeiras' },
+  { file: 'frasco-perfume-dourado-ornamentado-1.webp', name: 'Afeef', type: 'Lattafa · Eau de Parfum', cap: 'perfume árabe', family: 'Floral frutado', group: 'Árabes', notes: 'O "perfume do pavão": pêssego suculento, tuberosa e âmbar' },
+  { file: 'perfume-arabe-rosa-1.webp', name: 'Sabah Al Ward', type: 'Al Wataniah · Eau de Parfum', cap: 'perfume árabe', family: 'Floral adocicado', group: 'Árabes', notes: 'Rosas e doçura árabe, feminino marcante' },
+  { file: 'perfume-arabe-roxo-1.webp', name: 'Sabah Al Ward Delilah', type: 'Al Wataniah · Eau de Parfum', cap: 'perfume árabe', family: 'Floral gourmand', group: 'Árabes', notes: 'Versão roxa: floral doce com baunilha' },
+  { file: 'perfume-sabah-al-ward-rosa-1.webp', name: 'Sabah Al Ward Sugar', type: 'Al Wataniah · Eau de Parfum', cap: 'perfume árabe', family: 'Floral doce', group: 'Árabes', notes: 'Versão Sugar: rosas e açúcar, delicado e feminino' },
+  { file: 'perfume-arabic-collection-dania-1.webp', name: 'Arabic Collection Nº A040 · Dania', type: 'Eau de Parfum · 25ml', cap: 'perfume árabe', family: 'Floral frutado', group: 'Árabes', notes: 'Contratipo árabe feminino, frutado e doce' },
+  { file: 'perfume-floral-rosa-1.webp', name: 'Layaan', type: 'Lattafa · Eau de Parfum', cap: 'perfume árabe', family: 'Floral frutado', group: 'Árabes', notes: 'Floral frutado feminino, leve e romântico' },
+  { file: 'perfume-pink-eclipse-feminino-1.webp', name: 'Pink Eclipse', type: 'Maison Alhambra · Eau de Parfum 100ml', cap: 'perfume árabe', family: 'Floral adocicado', group: 'Árabes', notes: 'Feminino floral e adocicado, elegante e marcante' },
 
-  // ── Árabes ───────────────────────────────────────────────────────
-  { file: 'perfume-arabe-dourado-1.webp', name: 'Perfume Árabe Gold', type: 'Eau de Parfum · árabe', cap: 'perfume árabe', family: 'Amadeirado árabe', group: 'Árabes', notes: 'Dourado, intenso e de longa fixação' },
-  { file: 'perfume-arabe-dourado-2.webp', name: 'Perfume Árabe Imperial', type: 'Eau de Parfum · árabe', cap: 'perfume árabe', family: 'Oriental amadeirado', group: 'Árabes', notes: 'Notas quentes e especiarias, presença marcante' },
-  { file: 'perfume-arabe-rosa-1.webp', name: 'Perfume Árabe Rosé', type: 'Eau de Parfum · árabe', cap: 'perfume árabe', family: 'Floral oriental', group: 'Árabes', notes: 'Floral em tom rosado, doce e envolvente' },
-  { file: 'perfume-arabe-roxo-1.webp', name: 'Perfume Árabe Violeta', type: 'Eau de Parfum · árabe', cap: 'perfume árabe', family: 'Oriental adocicado', group: 'Árabes', notes: 'Frutado e amadeirado, sofisticação noturna' },
-  { file: 'perfume-arabic-collection-dania-1.webp', name: 'Dania · Arabic Collection', type: 'Eau de Parfum · árabe', cap: 'perfume árabe', family: 'Floral almiscarado', group: 'Árabes', notes: 'Da linha Arabic Collection, doçura elegante' },
-  { file: 'perfume-dalal-lattafa-feminino-1.webp', name: 'Lattafa Dalal', type: 'Eau de Parfum · árabe', cap: 'perfume árabe', family: 'Floral oriental', group: 'Árabes', notes: 'Feminino floral e adocicado, da Lattafa' },
-  { file: 'perfume-lattafa-asad-bourbon-1.webp', name: 'Lattafa Asad Bourbon', type: 'Eau de Parfum · árabe', cap: 'perfume árabe', family: 'Amadeirado gourmand', group: 'Árabes', notes: 'Intenso, com baunilha e madeiras nobres' },
-  { file: 'perfume-sabah-al-ward-rosa-1.webp', name: 'Sabah Al Ward Rosé', type: 'Eau de Parfum · árabe', cap: 'perfume árabe', family: 'Floral rosa', group: 'Árabes', notes: 'Rosas e doçura árabe, delicado e marcante' },
+  // ── Club de Nuit (Armaf) ─────────────────────────────────────────
+  { file: 'perfume-armaf-club-de-nuit-1.webp', name: 'Club de Nuit Woman', type: 'Armaf · Eau de Parfum 105ml', cap: 'perfume', family: 'Chipre frutado', group: 'Club de Nuit · Armaf', notes: 'Feminino elegante, frutado e amadeirado' },
+  { file: 'perfume-club-de-nuit-feminino-1.webp', name: 'Club de Nuit Woman', type: 'Armaf · Eau de Parfum 105ml', cap: 'perfume', family: 'Chipre frutado', group: 'Club de Nuit · Armaf', notes: 'Feminino elegante, frutado e amadeirado' },
+  { file: 'perfume-club-de-nuit-masculino-1.webp', name: 'Club de Nuit Intense Man', type: 'Armaf · Eau de Toilette 105ml', cap: 'perfume', family: 'Amadeirado frutado', group: 'Club de Nuit · Armaf', notes: 'Masculino marcante: abacaxi, bétula e baunilha' },
 
-  // ── Brand Collection & inspirações ───────────────────────────────
-  { file: 'perfume-brand-collection-1.webp', name: 'Brand Collection', type: 'Eau de Parfum · inspiração', cap: 'perfume', family: 'Inspirações', group: 'Brand Collection & Inspirações', notes: 'Fragrância inspirada nas grandes grifes' },
-  { file: 'perfume-brand-collection-givenchy-1.webp', name: 'Brand Collection · Inspiração Givenchy', type: 'Eau de Parfum · inspiração', cap: 'perfume', family: 'Floral amadeirado', group: 'Brand Collection & Inspirações', notes: 'Inspiração na assinatura Givenchy' },
-  { file: 'perfume-brand-collection-rosa-1.webp', name: 'Brand Collection Rosé', type: 'Eau de Parfum · inspiração', cap: 'perfume', family: 'Floral frutado', group: 'Brand Collection & Inspirações', notes: 'Inspiração feminina em tom rosado' },
-  { file: 'perfume-brand-collection-salto-alto-1.webp', name: 'Brand Collection · Salto Alto', type: 'Eau de Parfum · inspiração', cap: 'perfume', family: 'Floral chipre', group: 'Brand Collection & Inspirações', notes: 'Inspiração feminina sofisticada e marcante' },
-  { file: 'perfume-inspiracao-good-girl-1.webp', name: 'Inspiração Good Girl', type: 'Eau de Parfum · inspiração', cap: 'perfume', family: 'Gourmand floral', group: 'Brand Collection & Inspirações', notes: 'Inspiração no ícone feminino, doce e marcante' },
-  { file: 'perfume-armaf-club-de-nuit-1.webp', name: 'Armaf Club de Nuit', type: 'Eau de Parfum', cap: 'perfume', family: 'Amadeirado aromático', group: 'Brand Collection & Inspirações', notes: 'Clássico marcante, frutado e amadeirado' },
-  { file: 'perfume-club-de-nuit-feminino-1.webp', name: 'Club de Nuit Feminino', type: 'Eau de Parfum', cap: 'perfume', family: 'Floral frutado', group: 'Brand Collection & Inspirações', notes: 'Versão feminina, frutada e envolvente' },
-  { file: 'perfume-club-de-nuit-masculino-1.webp', name: 'Club de Nuit Masculino', type: 'Eau de Parfum', cap: 'perfume', family: 'Amadeirado', group: 'Brand Collection & Inspirações', notes: 'Versão masculina, intensa e amadeirada' },
+  // ── Brand Collection (contratipos · 25ml) ────────────────────────
+  { file: 'perfume-inspiracao-good-girl-1.webp', name: 'Brand Collection Nº 126', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Gourmand floral', group: 'Brand Collection', notes: 'Inspiração Good Girl (Carolina Herrera)' },
+  { file: 'perfume-brand-collection-salto-alto-1.webp', name: 'Brand Collection Nº 173', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Floral amadeirado', group: 'Brand Collection', notes: 'Inspiração Good Girl Légère (Carolina Herrera)' },
+  { file: 'perfume-glam-rosa-colecao-1.webp', name: 'Brand Collection Nº 332 · Glam', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Floral frutado', group: 'Brand Collection', notes: 'Salto rosa glitter · inspiração Good Girl Glam' },
+  { file: 'perfume-brand-collection-givenchy-1.webp', name: 'Brand Collection Nº 382', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Floral amadeirado', group: 'Brand Collection', notes: "Inspiração L'Interdit (Givenchy)" },
+  { file: 'perfume-brand-collection-1.webp', name: 'Brand Collection Nº 303', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Gourmand floral', group: 'Brand Collection', notes: 'Inspiração Devotion (Dolce & Gabbana)' },
+  { file: 'perfume-brand-collection-rosa-1.webp', name: 'Brand Collection Nº 017', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Floral frutado', group: 'Brand Collection', notes: 'Inspiração Nina (Nina Ricci)' },
+  { file: 'perfume-roxo-feminino-1.webp', name: 'Dream Brand Collection Nº 043 · Ange A', type: 'Contratipo · 25ml', cap: 'contratipo', family: 'Âmbar amadeirado', group: 'Brand Collection', notes: 'Inspiração Alien (Thierry Mugler)' },
 
-  // ── Femininos / florais ──────────────────────────────────────────
-  { file: 'perfume-floral-rosa-1.webp', name: 'Floral Rosé', type: 'Eau de Parfum', cap: 'perfume', family: 'Floral', group: 'Femininos', notes: 'Buquê floral leve em tom rosado' },
-  { file: 'perfume-glam-rosa-colecao-1.webp', name: 'Glam Rosé', type: 'Eau de Parfum', cap: 'perfume', family: 'Floral glam', group: 'Femininos', notes: 'Fragrância glamourosa com brilho rosé' },
-  { file: 'perfume-pink-eclipse-feminino-1.webp', name: 'Pink Eclipse', type: 'Eau de Parfum', cap: 'perfume', family: 'Floral frutado', group: 'Femininos', notes: 'Feminino frutado com fundo adocicado' },
-  { file: 'perfume-roxo-feminino-1.webp', name: 'Violeta Noir', type: 'Eau de Parfum', cap: 'perfume', family: 'Oriental floral', group: 'Femininos', notes: 'Feminino roxo, misterioso e envolvente' },
-  { file: 'frasco-perfume-dourado-ornamentado-1.webp', name: 'Perfume Ornamental Dourado', type: 'Eau de Parfum', cap: 'frasco dourado', family: 'Oriental', group: 'Femininos', notes: 'Frasco ornamentado dourado, fragrância marcante' },
+  // ── Kits & Combos ────────────────────────────────────────────────
+  { file: 'combo-perfume-hidratante-1.webp', name: 'Combo Sabah Al Ward', type: 'Combo · perfume + creme corporal', cap: 'combo perfumaria', family: 'Kit', group: 'Kits & Combos', notes: 'Perfume Sabah Al Ward + creme corporal, o combo perfeito' },
+  { file: 'kit-corporal-miss-rose-1.webp', name: 'Kit Miss Rosé · Daydream', type: 'Kit corporal · perfume + hidratante', cap: 'kit corporal', family: 'Beleza', group: 'Kits & Combos', notes: 'Cuidados corporais com toque floral e aveludado' },
 
-  // ── Kits & combos ────────────────────────────────────────────────
-  { file: 'combo-perfume-hidratante-1.webp', name: 'Combo Perfume + Hidratante', type: 'Kit · perfume + hidratante', cap: 'combo perfumaria', family: 'Kit', group: 'Kits & Combos', notes: 'Fragrância e hidratante para um ritual completo' },
-  { file: 'kit-corporal-miss-rose-1.webp', name: 'Kit Corporal Miss Rosé', type: 'Kit corporal', cap: 'kit corporal', family: 'Beleza', group: 'Kits & Combos', notes: 'Cuidados corporais com toque floral e aveludado' },
-  { file: 'perfumes-e-cremes-hidratantes-1.webp', name: 'Perfumes & Hidratantes', type: 'Linha corporal', cap: 'linha corporal', family: 'Kit', group: 'Kits & Combos', notes: 'Combinação de perfumes e cremes hidratantes' },
-
-  // ── Coleções (várias fragrâncias) ────────────────────────────────
-  { file: 'colecao-de-perfumes-brand-1.webp', name: 'Coleção Brand Collection', type: 'Coleção · inspirações', cap: 'coleção de perfumes', family: 'Inspirações', group: 'Coleções', notes: 'Seleção de fragrâncias inspiradas nas grifes' },
-  { file: 'perfumes-arabes-coloridos-1.webp', name: 'Perfumes Árabes · Coleção', type: 'Coleção · árabe', cap: 'coleção árabe', family: 'Orientais', group: 'Coleções', notes: 'Variedade de fragrâncias árabes coloridas' },
-  { file: 'perfumes-arabic-collection-1.webp', name: 'Arabic Collection', type: 'Coleção · árabe', cap: 'coleção árabe', family: 'Orientais', group: 'Coleções', notes: 'Linha Arabic Collection completa' },
-  { file: 'perfumes-luxuosos-dourados-1.webp', name: 'Perfumes Luxo Gold', type: 'Coleção premium', cap: 'coleção premium', family: 'Orientais', group: 'Coleções', notes: 'Seleção de fragrâncias dourados de luxo' },
-  { file: 'trio-perfumes-arabic-1.webp', name: 'Trio Árabe', type: 'Kit · 3 fragrâncias', cap: 'trio de perfumes', family: 'Orientais', group: 'Coleções', notes: 'Trio de fragrâncias árabes para experimentar' },
+  // ── Coleções (vários frascos por foto) ───────────────────────────
+  { file: 'perfumes-arabes-coloridos-1.webp', name: 'Sabah Al Ward · Coleção', type: 'Coleção · árabe', cap: 'coleção árabe', family: 'Florais', group: 'Coleções', notes: 'Sabah Al Ward nas cores: Sugar, Delilah e vermelho' },
+  { file: 'perfumes-luxuosos-dourados-1.webp', name: 'Fakhar Lattafa · Coleção', type: 'Coleção · árabe', cap: 'coleção árabe', family: 'Orientais', group: 'Coleções', notes: 'Trio Fakhar: Gold, Rose e Black' },
+  { file: 'perfumes-arabic-collection-1.webp', name: 'Arabic Collection · Linha', type: 'Coleção · árabe', cap: 'coleção árabe', family: 'Orientais', group: 'Coleções', notes: 'Vários: Asad Brown, Majestade, Rosa e Minha Essência' },
+  { file: 'trio-perfumes-arabic-1.webp', name: 'Arabic Collection · Trio', type: 'Kit · 3 fragrâncias', cap: 'trio de perfumes', family: 'Orientais', group: 'Coleções', notes: 'Trio Arabic Collection (A024, A026, A040)' },
+  { file: 'colecao-de-perfumes-brand-1.webp', name: 'Body Splash Brand Collection', type: 'Coleção · body splash 200ml', cap: 'coleção body splash', family: 'Body splash', group: 'Coleções', notes: 'Vários contratipos: Only Love, Beauty Girl, Pure...' },
+  { file: 'perfumes-e-cremes-hidratantes-1.webp', name: 'Hidratantes Brand Collection', type: 'Coleção · body lotion 200ml', cap: 'linha corporal', family: 'Corporais', group: 'Coleções', notes: 'Loções perfumadas: Meu Anjo, Only Love, Rose Lady...' },
 ]
 
 /** Vitrine de perfumaria — todos os itens do catálogo. */
@@ -85,7 +85,7 @@ export const perfumes: Perfume[] = raw.map(({ file, ...p }) => ({
 }))
 
 // Ordem das fileiras da perfumaria (cada grupo vira uma linha com carrossel).
-const PERFUME_ORDER = ['Árabes', 'Brand Collection & Inspirações', 'Femininos', 'Kits & Combos', 'Coleções']
+const PERFUME_ORDER = ['Árabes', 'Club de Nuit · Armaf', 'Brand Collection', 'Kits & Combos', 'Coleções']
 
 /** Perfumaria agrupada por categoria, na ordem das fileiras (grupos vazios saem). */
 export const perfumeGroups = PERFUME_ORDER
