@@ -51,7 +51,7 @@ const raw: Array<Omit<Perfume, 'img' | 'href'> & { file: string }> = [
   { file: 'perfume-pink-eclipse-feminino-1.webp', name: 'Pink Eclipse', type: 'Maison Alhambra · Eau de Parfum 100ml', cap: 'perfume árabe', family: 'Floral adocicado', group: 'Árabes', notes: 'Feminino floral e adocicado, elegante e marcante' },
 
   // ── Club de Nuit (Armaf) ─────────────────────────────────────────
-  { file: 'perfume-armaf-club-de-nuit-1.webp', name: 'Club de Nuit Woman', type: 'Armaf · Eau de Parfum 105ml', cap: 'perfume', family: 'Chipre frutado', group: 'Club de Nuit · Armaf', notes: 'Feminino elegante, frutado e amadeirado' },
+  // (a foto da caixa no fundo branco foi removida — mantida só a lifestyle)
   { file: 'perfume-club-de-nuit-feminino-1.webp', name: 'Club de Nuit Woman', type: 'Armaf · Eau de Parfum 105ml', cap: 'perfume', family: 'Chipre frutado', group: 'Club de Nuit · Armaf', notes: 'Feminino elegante, frutado e amadeirado' },
   { file: 'perfume-club-de-nuit-masculino-1.webp', name: 'Club de Nuit Intense Man', type: 'Armaf · Eau de Toilette 105ml', cap: 'perfume', family: 'Amadeirado frutado', group: 'Club de Nuit · Armaf', notes: 'Masculino marcante: abacaxi, bétula e baunilha' },
 
