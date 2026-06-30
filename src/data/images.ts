@@ -22,19 +22,21 @@ export function img(base: string, w?: number, h?: number): string {
   return `${IMG_DIR}/${base}`
 }
 
+/** Fotos do casal que passam no carrossel/slideshow do hero (capa). */
+export const heroSlides: string[] = [
+  img('casal-em-festa-1.webp'),
+  img('casal-sorrindo-carro-1.webp'),
+  img('casal-sorrindo-oculos-escuros-1.webp'),
+]
+
 /**
- * Cenas editoriais (hero, banners e fundos das seções) — agora com FOTOS REAIS
- * (sem mais stock do Unsplash).
- * - hero e banners: fotos do casal (Suelen & Wellyngton);
- * - statement: correntes sobre fundo escuro;
- * - perfumaria: Afeef (frasco dourado).
- * Para trocar uma cena, basta mudar o arquivo aqui. Os componentes têm guarda:
- * se uma cena ficar vazia (''), mostram o box "[ FOTO ]".
+ * Cenas editoriais (banners e fundos das seções) — FOTOS REAIS (sem stock).
+ * O hero usa o slideshow `heroSlides` acima (fotos do casal).
+ * Componentes têm guarda: cena vazia ('') mostra o box "[ FOTO ]".
  */
-export const scenes: Record<'hero' | 'statement' | 'bannerEveryday' | 'bannerGift' | 'perfumaria', string> = {
-  hero: img('casal-em-festa-1.webp'), // casal · capa
+export const scenes: Record<'statement' | 'bannerEveryday' | 'bannerGift' | 'perfumaria', string> = {
   statement: img('correntes-prata-expostas-1.webp'), // correntes sobre fundo escuro
-  bannerEveryday: img('casal-sorrindo-carro-1.webp'), // casal · dia a dia
-  bannerGift: img('casal-sorrindo-oculos-escuros-1.webp'), // casal · celebrando
+  bannerEveryday: img('pulseiras-prata-empilhadas-1.webp'), // joias do dia a dia
+  bannerGift: img('conjunto-joia-azul-presente-1.webp'), // peça para presente
   perfumaria: img('frasco-perfume-dourado-ornamentado-1.webp'), // Afeef · frasco dourado
 }

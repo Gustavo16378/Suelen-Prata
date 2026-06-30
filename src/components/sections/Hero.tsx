@@ -1,6 +1,7 @@
 import Button from '../ui/Button'
+import Slideshow from '../ui/Slideshow'
 import { waLink } from '../../data/site'
-import { scenes } from '../../data/images'
+import { heroSlides } from '../../data/images'
 
 interface StatProps {
   value: string
@@ -88,17 +89,7 @@ export default function Hero() {
             <br />
             colar de prata 925
           </span>
-          {scenes.hero && (
-            <img
-              src={scenes.hero}
-              alt="Modelo usando colar de prata"
-              className="sp-ph"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none'
-              }}
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-          )}
+          <Slideshow images={heroSlides} alt="Suelen e Wellyngton" />
         </div>
 
         <div style={{ position: 'absolute', bottom: '-22px', left: '-22px', background: 'var(--surface)', border: '1px solid var(--line)', borderRadius: '4px', padding: '15px 20px', boxShadow: '0 24px 44px -28px rgba(60,45,20,.5)', zIndex: 2 }}>
