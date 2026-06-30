@@ -6,12 +6,34 @@ import PieceModal, { type Piece } from '../ui/PieceModal'
 import { joiasGroups, type Product } from '../../data/products'
 import { waLink } from '../../data/site'
 
-const JEWELRY_DETAILS = [
-  'Prata 925 legítima e certificada',
+// Selos de confiança do modal — variam por categoria. Relógios/smartwatch NÃO
+// são prata 925, então têm a sua própria lista.
+// TODO: revisar com a Suelen — ajustar conforme garantia/specs reais.
+const SILVER_TRUST = [
   'Antialérgica / hipoalergênica',
   'Acompanha embalagem para presente',
   'Entrega para todo o Brasil',
 ]
+
+const DETAILS_BY_TAG: Record<string, string[]> = {
+  Relógio: [
+    'Relógio original, pronta entrega',
+    'Pulseira ajustável ao pulso',
+    'Acompanha embalagem para presente',
+    'Entrega para todo o Brasil',
+  ],
+  Smartwatch: [
+    'Smartwatch com várias funções',
+    'Pulseiras intercambiáveis',
+    'Acompanha embalagem para presente',
+    'Entrega para todo o Brasil',
+  ],
+}
+
+/** Detalhes do modal conforme a categoria da peça. */
+function detailsFor(p: Product): string[] {
+  return DETAILS_BY_TAG[p.tag] ?? [`${p.tag} em Prata 925 legítima e certificada`, ...SILVER_TRUST]
+}
 
 function toPiece(p: Product): Piece {
   return {
@@ -22,7 +44,7 @@ function toPiece(p: Product): Piece {
     notes: p.notes,
     stars: p.stars,
     reviews: p.reviews,
-    details: JEWELRY_DETAILS,
+    details: detailsFor(p),
   }
 }
 
